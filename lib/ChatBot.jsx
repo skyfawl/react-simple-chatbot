@@ -687,8 +687,9 @@ class ChatBot extends Component {
                 style={submitButtonStyle}
                 onClick={this.handleSubmitButton}
                 invalid={inputInvalid}
-                disabled={disabled}
+                disabled={false}
                 speaking={speaking}
+                triggerNextStep={this.triggerNextStep}
               >
                 {icon}
               </SubmitButton>
