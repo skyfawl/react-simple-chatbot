@@ -630,7 +630,9 @@ class ChatBot extends Component {
       : currentStep.placeholder || placeholder;
 
     const inputAttributesOverride = currentStep.inputAttributes || inputAttributes;
-
+    const categories = {
+      'trigger' : 'categories'
+    };
     return (
       <div className={`rsc ${className}`}>
         {floating && (
@@ -681,11 +683,12 @@ class ChatBot extends Component {
                 {...inputAttributesOverride}
               />
             )}
+            
             {!currentStep.hideInput && !hideSubmitButton && (
               <SubmitButton
                 className="rsc-submit-button"
                 style={submitButtonStyle}
-                onClick={() =>this.triggerNextStep({`trigger`: `categories`})}
+                onClick={ (e) =>  this.triggerNextStep(categories)}
                 invalid={inputInvalid}
                 disabled={false}
                 speaking={speaking}
