@@ -515,7 +515,14 @@ class ChatBot extends Component {
       this.setState({ opened });
     }
   };
+  openCategories = () => {
 
+      const categories = {
+        trigger: 'categories'
+      };
+
+      this.triggerNextStep(categories);
+  }
   renderStep = (step, index) => {
     const { renderedSteps } = this.state;
     const {
@@ -530,7 +537,7 @@ class ChatBot extends Component {
     const { options, component, asMessage } = step;
     const steps = this.generateRenderedStepsById();
     const previousStep = index > 0 ? renderedSteps[index - 1] : {};
-
+``
     if (component && !asMessage) {
       return (
         <CustomStep
@@ -630,14 +637,7 @@ class ChatBot extends Component {
       : currentStep.placeholder || placeholder;
 
     const inputAttributesOverride = currentStep.inputAttributes || inputAttributes;
-    openCategories = (step, index) => {
-      console.log("Opening category")
-      const categories = {
-        trigger: 'categories'
-      };
-      console.log("cat ", this);
-      this.triggerNextStep(categories);
-    }
+    
     
     return (
       <div className={`rsc ${className}`}>
