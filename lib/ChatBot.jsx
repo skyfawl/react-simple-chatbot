@@ -631,8 +631,8 @@ class ChatBot extends Component {
 
     const inputAttributesOverride = currentStep.inputAttributes || inputAttributes;
     const categories = {
-      'trigger': 'categories'
-    } 
+      trigger: 'categories'
+    };
     return (
       <div className={`rsc ${className}`}>
         {floating && (
