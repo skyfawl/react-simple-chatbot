@@ -685,7 +685,7 @@ class ChatBot extends Component {
               <SubmitButton
                 className="rsc-submit-button"
                 style={submitButtonStyle}
-                onClick={this.handleSubmitButton}
+                onClick={this.triggerNextStep}
                 invalid={inputInvalid}
                 disabled={false}
                 speaking={speaking}
