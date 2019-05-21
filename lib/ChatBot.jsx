@@ -234,10 +234,13 @@ class ChatBot extends Component {
   };
 
   triggerNextStep = data => {
+    console.log("Triggering next step ", data);
+
     const { enableMobileAutoFocus } = this.props;
     const { defaultUserSettings, previousSteps, renderedSteps, steps } = this.state;
 
     let { currentStep, previousStep } = this.state;
+    console.log(this.state);
     const isEnd = currentStep.end;
 
     if (data && data.value) {
@@ -517,11 +520,11 @@ class ChatBot extends Component {
   };
   openCategories = () => {
 
-      const categories = {
-        trigger: 'categories'
-      };
+    const categories = {
+      trigger: 'categories'
+    };
 
-      this.triggerNextStep(categories);
+    this.triggerNextStep(categories);
   }
   renderStep = (step, index) => {
     const { renderedSteps } = this.state;
@@ -537,7 +540,7 @@ class ChatBot extends Component {
     const { options, component, asMessage } = step;
     const steps = this.generateRenderedStepsById();
     const previousStep = index > 0 ? renderedSteps[index - 1] : {};
-``
+    ``
     if (component && !asMessage) {
       return (
         <CustomStep
@@ -637,8 +640,8 @@ class ChatBot extends Component {
       : currentStep.placeholder || placeholder;
 
     const inputAttributesOverride = currentStep.inputAttributes || inputAttributes;
-    
-    
+
+
     return (
       <div className={`rsc ${className}`}>
         {floating && (
