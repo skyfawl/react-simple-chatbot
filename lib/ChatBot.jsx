@@ -509,7 +509,7 @@ class ChatBot extends Component {
 
   toggleChatBot = opened => {
     const { toggleFloating } = this.props;
-
+    console.log('toogleFloating ', this.props);
     if (toggleFloating) {
       toggleFloating({ opened });
     } else {
