@@ -510,6 +510,18 @@ class ChatBot extends Component {
   toggleChatBot = opened => {
     const { toggleFloating } = this.props;
     console.log('toogleFloating ', this);
+    if (this.props.isFirstTime) {
+
+      console.log("Triggering categories")
+      this.props.disableFirstTime();
+      setTimeout(function() {
+        this.triggerNextStep({
+          trigger: 'categories'
+        });
+      }, 2000)
+    }
+    
+    console.log("After disabling ", this);
     if (toggleFloating) {
       toggleFloating({ opened });
     } else {
