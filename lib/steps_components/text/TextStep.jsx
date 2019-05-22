@@ -16,7 +16,7 @@ class TextStep extends Component {
     const { step, speak, previousValue, triggerNextStep } = this.props;
     const { component, delay, waitAction } = step;
     const isComponentWatingUser = component && waitAction;
-
+    console.log("Delay message by ", delay)
     setTimeout(() => {
       this.setState({ loading: false }, () => {
         if (!isComponentWatingUser && !step.rendered) {
