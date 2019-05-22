@@ -514,11 +514,13 @@ class ChatBot extends Component {
 
       console.log("Triggering categories")
       this.props.disableFirstTime();
+      setTimeout(function () {
         this.triggerNextStep({
           trigger: 'categories'
         });
+      }.bind(this), 5000)
     }
-    
+
     console.log("After disabling ", this);
     if (toggleFloating) {
       toggleFloating({ opened });
