@@ -514,11 +514,9 @@ class ChatBot extends Component {
 
       console.log("Triggering categories")
       this.props.disableFirstTime();
-      setTimeout(function() {
         this.triggerNextStep({
           trigger: 'categories'
         });
-      }, 2000)
     }
     
     console.log("After disabling ", this);
